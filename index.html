@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JatinJayasimha VN — Cybersecurity Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1220'/%3E%3Ctext x='16' y='23' font-family='monospace' font-weight='700' font-size='18' fill='%23D97757' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<meta name="description" content="M.Tech Cybersecurity researcher and security engineer — AppSec, DevSecOps, intrusion detection, and applied cryptography projects.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JatinJayasimha VN — Application Security Engineer">
+<meta property="og:description" content="Turning security problems into structured, defensible work. M.Tech Cybersecurity researcher with hands-on AppSec, DevSecOps, and intrusion detection projects.">
+<meta property="og:image" content="https://raw.githubusercontent.com/JATINJAYASIMHA/firmware-ota-signing-demo/main/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JatinJayasimha VN — Application Security Engineer">
+<meta name="twitter:description" content="Turning security problems into structured, defensible work.">
+<meta name="theme-color" content="#0B1220">
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('jjvn-theme');
+      if(saved === 'light'){ document.documentElement.setAttribute('data-theme','light'); }
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1220;
+    --ink-2:#0F1828;
+    --ink-3:#141F33;
+    --line:#1E2937;
+    --line-soft:#2A3850;
+    --paper:#EDEEF0;
+    --paper-dim:#A8AFBC;
+    --paper-faint:#6B7384;
+    --amber:#D97757;
+    --amber-dim:#8C5440;
+    --amber-hover:#E08A6C;
+    --teal:#4C9A8C;
+    --teal-dim:#33665C;
+    --blue-tag:#85A7E5;
+    --blue-tag-bg:rgba(133,167,229,0.13);
+    --purple-tag:#C48CDE;
+    --purple-tag-bg:rgba(196,140,222,0.13);
+    --amber-tag-bg:rgba(217,119,87,0.13);
+    --teal-tag-bg:rgba(76,154,140,0.13);
+    --shadow:none;
+    --nav-bg:rgba(11,18,32,0.86);
+    --display:'Space Grotesk',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+    color-scheme:dark;
+  }
+  html[data-theme="light"]{
+    --ink:#F1F5F9;
+    --ink-2:#FFFFFF;
+    --ink-3:#E2E8F0;
+    --line:#CBD5E1;
+    --line-soft:#94A3B8;
+    --paper:#0F172A;
+    --paper-dim:#1E293B;
+    --paper-faint:#475569;
+    --amber:#C2410C;
+    --amber-dim:#FB923C;
+    --amber-hover:#9A3412;
+    --teal:#0F766E;
+    --teal-dim:#5EEAD4;
+    --blue-tag:#1D4ED8;
+    --blue-tag-bg:rgba(29,78,216,0.10);
+    --purple-tag:#7C3AED;
+    --purple-tag-bg:rgba(124,58,237,0.10);
+    --amber-tag-bg:rgba(194,65,12,0.10);
+    --teal-tag-bg:rgba(15,118,110,0.10);
+    --shadow:0 1px 4px rgba(15,23,42,0.10);
+    --nav-bg:rgba(241,245,249,0.92);
+    color-scheme:light;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--display);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    transition:background-color .25s ease, color .25s ease;
+  }
+  ::selection{background:var(--amber);color:var(--ink);}
+  a:focus-visible, button:focus-visible, .case-head:focus-visible, .filter-chip:focus-visible{
+    outline:2px solid var(--amber);outline-offset:2px;border-radius:2px;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:background-color .25s ease;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-mark{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;color:var(--paper);}
+  .nav-mark span{color:var(--amber);}
+  .nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;letter-spacing:0.03em;}
+  .nav-links a{color:var(--paper-dim);transition:color .15s;}
+  .nav-links a:hover{color:var(--amber);}
+  .nav-links .resume-link{color:var(--teal);border:1px solid var(--teal-dim);padding:5px 12px;border-radius:2px;}
+  .nav-links .resume-link:hover{background:var(--teal-dim);color:var(--paper);}
+  .resume-download{
+    width:34px;height:34px;border-radius:2px;border:1px solid var(--line);
+    color:var(--paper-dim);display:flex;align-items:center;justify-content:center;
+    transition:border-color .15s,color .15s;flex-shrink:0;
+  }
+  .resume-download:hover{border-color:var(--paper-faint);color:var(--paper);}
+  .resume-download svg{width:15px;height:15px;}
+  .nav-toggle{display:none;background:none;border:none;color:var(--paper);font-size:22px;cursor:pointer;}
+
+  .theme-toggle{
+    width:34px;height:34px;border-radius:2px;
+    border:1px solid var(--line);background:transparent;
+    color:var(--paper-dim);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .15s,color .15s;
+    flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--paper-faint);color:var(--paper);}
+  .theme-toggle svg{width:16px;height:16px;}
+  .theme-toggle .icon-sun{display:none;}
+  html[data-theme="light"] .theme-toggle .icon-moon{display:none;}
+  html[data-theme="light"] .theme-toggle .icon-sun{display:block;}
+
+  /* ---------- hero ---------- */
+  header.hero{
+    padding:168px 0 96px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero-canvas{
+    position:absolute;top:0;right:-120px;width:640px;height:640px;
+    opacity:0.55;pointer-events:none;
+  }
+  .hero-rings{stroke:var(--line);}
+  .hero-dots-teal{fill:var(--teal);}
+  .hero-dots-amber{fill:var(--amber);}
+  .hero-lines-amber{stroke:var(--amber);}
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:0.08em;
+    color:var(--teal);text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;margin-bottom:28px;
+  }
+  .eyebrow::before{content:'';width:7px;height:7px;background:var(--teal);border-radius:50%;display:inline-block;
+    box-shadow:0 0 0 3px rgba(76,154,140,0.18);animation:pulse-dot 2.4s ease-in-out infinite;}
+  @keyframes pulse-dot{
+    0%,100%{box-shadow:0 0 0 3px rgba(76,154,140,0.18);}
+    50%{box-shadow:0 0 0 6px rgba(76,154,140,0.10);}
+  }
+  h1.headline{
+    font-size:clamp(36px,5.2vw,64px);
+    font-weight:600;
+    line-height:1.08;
+    max-width:760px;
+    letter-spacing:-0.01em;
+  }
+  h1.headline em{
+    font-style:normal;color:var(--amber);
+  }
+  .hero-sub{
+    margin-top:26px;max-width:560px;font-size:17px;color:var(--paper-dim);line-height:1.7;
+  }
+  .hero-meta{
+    margin-top:44px;display:flex;flex-wrap:wrap;gap:14px 36px;
+    font-family:var(--mono);font-size:12.5px;color:var(--paper-faint);
+  }
+  .hero-meta b{color:var(--paper);font-weight:500;}
+  .hero-cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);font-size:13px;letter-spacing:0.02em;
+    padding:11px 20px;border-radius:2px;display:inline-flex;align-items:center;gap:8px;
+    transition:all .15s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--amber);color:var(--ink);}
+  .btn-primary:hover{background:var(--amber-hover);}
+  .btn-ghost{border-color:var(--line);color:var(--paper-dim);}
+  .btn-ghost:hover{border-color:var(--paper-faint);color:var(--paper);}
+
+  /* ---------- section frame ---------- */
+  section{padding:88px 0;border-bottom:1px solid var(--line);}
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:48px;flex-wrap:wrap;gap:12px;
+  }
+  .section-tag{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;color:var(--paper-faint);text-transform:uppercase;}
+  h2.section-title{font-size:28px;font-weight:600;letter-spacing:-0.01em;}
+  .section-note{font-family:var(--mono);font-size:12px;color:var(--paper-faint);max-width:280px;text-align:right;}
+
+  /* ---------- case cards (projects) ---------- */
+  .case{
+    border:1px solid var(--line);
+    border-radius:3px;
+    margin-bottom:18px;
+    background:var(--ink-2);
+    overflow:hidden;
+    transition:border-color .15s, background-color .25s ease;
+    box-shadow:var(--shadow);
+  }
+  .case:hover{border-color:var(--line-soft);}
+  .case-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 26px;cursor:pointer;gap:20px;
+  }
+  .case-head:hover{background:var(--ink-3);}
+  .case-id{font-family:var(--mono);font-size:11.5px;color:var(--paper-faint);min-width:64px;}
+  .case-id-link{cursor:pointer;transition:color .15s;}
+  .case-id-link:hover{color:var(--teal);text-decoration:underline;text-decoration-style:dotted;}
+  .case-id-link.copied-id{color:var(--teal);}
+  .case-id-link.copied-id::after{content:' ✓';}
+  .case-title-wrap{flex:1;min-width:0;}
+  .case-title{font-size:17px;font-weight:500;line-height:1.4;}
+  .case-summary{font-size:13.5px;color:var(--paper-dim);margin-top:4px;line-height:1.5;}
+  .case-tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;
+    padding:4px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0;
+  }
+  .tag-infra{background:var(--amber-tag-bg);color:var(--amber);}
+  .tag-detect{background:var(--teal-tag-bg);color:var(--teal);}
+  .tag-cloud{background:var(--blue-tag-bg);color:var(--blue-tag);}
+  .tag-crypto{background:var(--purple-tag-bg);color:var(--purple-tag);}
+
+  /* ---------- case filters ---------- */
+  .filter-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px;}
+  .filter-chip{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.03em;
+    padding:7px 14px;border-radius:2px;border:1px solid var(--line);
+    background:transparent;color:var(--paper-dim);cursor:pointer;
+    transition:all .15s;
+  }
+  .filter-chip:hover{border-color:var(--paper-faint);color:var(--paper);}
+  .filter-chip.active{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+  .filter-chip .count{opacity:0.6;margin-left:5px;}
+  .case{transition:border-color .15s, background-color .25s ease, opacity .25s ease, transform .25s ease, max-height .3s ease;}
+  .case.filtered-out{
+    opacity:0;max-height:0;margin-bottom:0;border-width:0;
+    padding:0;overflow:hidden;pointer-events:none;
+  }
+  .case-chevron{color:var(--paper-faint);font-size:18px;transition:transform .2s;flex-shrink:0;}
+  .case.open .case-chevron{transform:rotate(45deg);}
+  .case-body{
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  .case-body-inner{padding:0 26px 26px 26px;}
+  .case-divider{border-top:1px solid var(--line);margin-bottom:18px;}
+  .case-findings{list-style:none;display:flex;flex-direction:column;gap:13px;}
+  .case-findings li{
+    display:flex;gap:12px;font-size:14px;color:var(--paper-dim);line-height:1.65;
+  }
+  .case-findings li::before{
+    content:'›';font-family:var(--mono);color:var(--amber);flex-shrink:0;margin-top:1px;
+  }
+  .case-stack{
+    margin-top:18px;display:flex;flex-wrap:wrap;gap:7px;
+  }
+  .stack-chip{
+    font-family:var(--mono);font-size:11px;color:var(--paper-faint);
+    border:1px solid var(--line);padding:4px 9px;border-radius:2px;
+  }
+  .case-links{margin-top:18px;display:flex;gap:16px;}
+  .case-links a{font-family:var(--mono);font-size:12px;color:var(--teal);}
+  .case-links a:hover{color:var(--amber);}
+
+  /* ---------- experience ---------- */
+  .exp-row{
+    display:grid;grid-template-columns:160px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line);
+  }
+  .exp-row:first-of-type{border-top:none;}
+  .exp-period{font-family:var(--mono);font-size:12px;color:var(--paper-faint);padding-top:3px;}
+  .exp-role{font-size:17px;font-weight:500;}
+  .exp-org{font-family:var(--mono);font-size:12.5px;color:var(--teal);margin-top:3px;}
+  .exp-points{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px;}
+  .exp-points li{display:flex;gap:11px;font-size:14px;color:var(--paper-dim);line-height:1.65;}
+  .exp-points li::before{content:'›';font-family:var(--mono);color:var(--amber);flex-shrink:0;}
+
+  /* ---------- skills ---------- */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+  .skill-cell{background:var(--ink-2);padding:22px 24px;}
+  .skill-cat{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin-bottom:13px;}
+  .skill-list{display:flex;flex-wrap:wrap;gap:7px;}
+  .skill-chip{
+    font-family:var(--mono);font-size:11.5px;color:var(--paper-dim);
+    border:1px solid var(--line);padding:5px 10px;border-radius:2px;
+    background:var(--ink-3);white-space:nowrap;
+  }
+
+  /* ---------- certifications ---------- */
+  .cert-grid{display:flex;flex-direction:column;gap:10px;}
+  .cert-row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;
+    border:1px solid var(--line);border-radius:3px;background:var(--ink-2);
+    padding:16px 22px;transition:border-color .15s;
+  }
+  .cert-row:hover{border-color:var(--line-soft);background:var(--ink-3);}
+  .cert-name{font-size:15px;font-weight:500;}
+  .cert-org{font-family:var(--mono);font-size:12px;color:var(--paper-faint);white-space:nowrap;}
+
+  /* ---------- contact / footer ---------- */
+  footer{padding:88px 0 56px;}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;}
+  .contact-line{font-size:32px;font-weight:600;line-height:1.25;max-width:480px;letter-spacing:-0.01em;}
+  .contact-line .amber{color:var(--amber);}
+  .contact-list{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .contact-item a, .contact-item span{font-family:var(--mono);font-size:14px;color:var(--paper-dim);}
+  .contact-item{display:flex;flex-direction:column;gap:3px;}
+  .contact-label{font-family:var(--mono);font-size:11px;color:var(--paper-faint);text-transform:uppercase;letter-spacing:0.06em;}
+  .contact-item a:hover{color:var(--amber);}
+  .copyable{cursor:pointer;position:relative;}
+  .copyable::after{
+    content:'copy';font-family:var(--mono);font-size:10px;color:var(--paper-faint);
+    margin-left:9px;opacity:0;transition:opacity .15s;text-transform:uppercase;letter-spacing:0.04em;
+  }
+  .copyable:hover::after{opacity:1;}
+  .copyable.copied::after{content:'copied ✓';opacity:1;color:var(--teal);}
+  .foot-bottom{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;color:var(--paper-faint);flex-wrap:wrap;gap:8px;}
+
+  /* ---------- entrance animations ---------- */
+  @keyframes nav-drop{
+    from{transform:translateY(-100%);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+  }
+  nav{animation:nav-drop .5s cubic-bezier(.16,1,.3,1) both;}
+
+  @keyframes hero-rise{
+    from{opacity:0;transform:translateY(22px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .eyebrow{animation:hero-rise .6s .15s cubic-bezier(.16,1,.3,1) both;}
+  h1.headline{animation:hero-rise .7s .25s cubic-bezier(.16,1,.3,1) both;}
+  .hero-sub{animation:hero-rise .7s .38s cubic-bezier(.16,1,.3,1) both;}
+  .hero-meta{animation:hero-rise .7s .50s cubic-bezier(.16,1,.3,1) both;}
+  .hero-cta{animation:hero-rise .7s .62s cubic-bezier(.16,1,.3,1) both;}
+  .hero-canvas{animation:hero-rise 1s .3s cubic-bezier(.16,1,.3,1) both;}
+
+  /* blinking cursor on headline accent */
+  @keyframes cursor-blink{
+    0%,49%{border-right-color:var(--amber);}
+    50%,100%{border-right-color:transparent;}
+  }
+  h1.headline em{
+    border-right:2px solid var(--amber);
+    padding-right:3px;
+    animation:cursor-blink 1.1s step-end 5;
+    animation-delay:.9s;
+  }
+
+  /* hero ring slow spin */
+  @keyframes ring-spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+  }
+  .hero-rings{
+    transform-origin:200px 200px;
+    animation:ring-spin 40s linear infinite;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-rings{animation:none;}
+    h1.headline em{animation:none;border-right:none;padding-right:0;}
+  }
+
+  /* btn scale on hover */
+  .btn{
+    transition:all .18s cubic-bezier(.16,1,.3,1);
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
+
+  /* skill chip hover lift */
+  .skill-chip{
+    transition:border-color .15s, color .15s, transform .15s;
+  }
+  .skill-chip:hover{
+    border-color:var(--amber);color:var(--paper);
+    transform:translateY(-2px);
+  }
+
+  /* case card left-border accent on open */
+  .case{border-left:3px solid transparent;transition:border-color .2s, border-left-color .2s, background-color .25s ease;}
+  .case.open{border-left-color:var(--amber);}
+
+  /* nav link underline slide */
+  .nav-links a:not(.resume-link){
+    position:relative;
+  }
+  .nav-links a:not(.resume-link)::after{
+    content:'';position:absolute;bottom:-3px;left:0;right:100%;height:1px;
+    background:var(--amber);transition:right .2s ease;
+  }
+  .nav-links a:not(.resume-link):hover::after{right:0;}
+
+  /* section title slide-in accent */
+  h2.section-title{
+    position:relative;display:inline-block;
+  }
+
+  /* cert row hover left accent */
+  .cert-row{
+    border-left:3px solid transparent;
+    transition:border-color .15s, border-left-color .2s, background-color .15s;
+  }
+  .cert-row:hover{border-left-color:var(--teal);}
+
+  @media (max-width:760px){
+    .wrap{padding:0 20px;}
+    .nav-links a:not(.resume-link){display:none;}
+    .resume-download{display:none;}
+    .nav-links{gap:8px;}
+    h1.headline{font-size:36px;}
+    .case-head{flex-wrap:wrap;}
+    .exp-row{grid-template-columns:1fr;gap:10px;}
+    .skill-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .contact-line{font-size:26px;}
+    .hero-canvas{display:none;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jatin Jayasimha VN",
+  "jobTitle": "Application Security Engineer",
+  "description": "M.Tech Cybersecurity researcher and security engineer specializing in AppSec, DevSecOps, intrusion detection, and applied cryptography.",
+  "email": "mailto:jathinsimha08@gmail.com",
+  "telephone": "+91-8123470135",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "BMS Institute of Technology and Management"
+  },
+  "knowsAbout": [
+    "Application Security",
+    "DevSecOps",
+    "Intrusion Detection",
+    "Penetration Testing",
+    "Cloud Security",
+    "Applied Cryptography"
+  ],
+  "sameAs": [
+    "https://github.com/JATINJAYASIMHA",
+    "https://linkedin.com/in/jathinjayasimha-v-n"
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">Jatin<span>JayasimhaVN</span> <span style="color:var(--paper-faint)">/ Cybersecurity</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="JatinJayasimha_Cybersecurity.pdf" class="resume-link" target="_blank">Resume ↗</a>
+      <a href="JatinJayasimha_Cybersecurity.pdf" class="resume-download" download="JatinJayasimha_Resume.pdf" aria-label="Download resume PDF" title="Download resume">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light and dark mode" title="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-canvas" viewBox="0 0 400 400" aria-hidden="true">
+    <g class="hero-rings" fill="none" stroke-width="1">
+      <circle cx="200" cy="200" r="60"/>
+      <circle cx="200" cy="200" r="120"/>
+      <circle cx="200" cy="200" r="180"/>
+    </g>
+    <g class="hero-dots-teal" opacity="0.85">
+      <circle cx="200" cy="200" r="3.5"/>
+      <circle cx="240" cy="160" r="2.5"/>
+      <circle cx="150" cy="230" r="2"/>
+      <circle cx="280" cy="240" r="2"/>
+      <circle cx="170" cy="150" r="2"/>
+    </g>
+    <g class="hero-dots-amber">
+      <circle cx="305" cy="120" r="5"/>
+      <circle cx="95" cy="305" r="3.5"/>
+    </g>
+    <g class="hero-lines-amber" stroke-width="1" opacity="0.5">
+      <line x1="305" y1="120" x2="200" y2="200"/>
+      <line x1="95" y1="305" x2="200" y2="200"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Open to Cybersecurity Engineering roles (Application, Network, Information, Cloud) · Bengaluru</div>
+    <h1 class="headline">Turning security problems into <em>structured, defensible work.</em></h1>
+    <p class="hero-sub">M.Tech Cybersecurity researcher and application security engineer. I build the pipelines, models, and tooling that catch security issues before they reach production — then explain exactly why they matter and how to fix them.</p>
+    <div class="hero-meta">
+      <div><b>M.Tech in Cybersecurity</b> — BMS Institute of Technology & Management, CGPA 9.14</div>
+      <div><b>1+ yr</b> — Software Engineer Trainee - Application Security, Cognizant Technology Solutions</div><br>
+      <div><b>9</b> security projects shipped end-to-end</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View case files →</a>
+      <a href="mailto:jathinsimha08@gmail.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Case files</div>
+        <h2 class="section-title">Projects &amp; research</h2>
+      </div>
+      <div class="section-note">Each entry tagged by what it primarily exercises: infrastructure, detection, cloud, or applied cryptography.</div>
+    </div>
+
+    <div class="filter-row" role="group" aria-label="Filter case files by category">
+      <button class="filter-chip active" data-filter="all" onclick="filterCases(this)">All <span class="count">9</span></button>
+      <button class="filter-chip" data-filter="infra" onclick="filterCases(this)">Infrastructure <span class="count">2</span></button>
+      <button class="filter-chip" data-filter="detect" onclick="filterCases(this)">Detection <span class="count">2</span></button>
+      <button class="filter-chip" data-filter="cloud" onclick="filterCases(this)">Cloud <span class="count">2</span></button>
+      <button class="filter-chip" data-filter="crypto" onclick="filterCases(this)">Crypto <span class="count">3</span></button>
+    </div>
+
+    <!-- Case 00 -->
+    <div class="case open" data-case="00" data-tag="infra">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="true">
+        <div class="case-id">CASE/00</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Secure Android Firmware Integrity Verification &amp; OTA Signing System</div>
+          <div class="case-summary">End-to-end Android firmware security: PKI signing, TEE attestation, and remote key provisioning — built across six phases, written up for CIS 2026.</div>
+        </div>
+        <div class="case-tag tag-infra">Infrastructure</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Built a 3-tier PKI from scratch — offline Root CA, Intermediate CA, and OTA signing certificate — with full X.509 chain validation, CRL support, and RSA-PKCS1v15/SHA-256 signing for OTA update packages.</li>
+            <li>Developed a Java Android verifier app that performs AVB-style verified-boot hash checks, validates the full certificate chain, and parses signed OTA packages against partition manifests.</li>
+            <li>Implemented hardware-backed attestation using Android Keystore/Keymaster with biometric-gated keypairs, plus a CSR-based Remote Key Provisioning flow against a mock RKP server.</li>
+            <li>Built an OP-TEE Trusted Application running on QEMU for TEE-backed secure storage, with a full STRIDE threat model documenting attack surface and mitigations.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Java / Android</span><span class="stack-chip">PKI / X.509</span><span class="stack-chip">RSA-2048</span>
+            <span class="stack-chip">Android Keystore</span><span class="stack-chip">OP-TEE</span><span class="stack-chip">QEMU</span><span class="stack-chip">STRIDE</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/firmware-ota-signing-demo" target="_blank">View repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 01 -->
+    <div class="case" data-case="01" data-tag="infra">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/01</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Automated Secure Software Delivery Pipeline — DevSecOps on Azure</div>
+          <div class="case-summary">Self-built CI/CD security pipeline from bare Azure subscription to automated, scanned, zero-touch deployment.</div>
+        </div>
+        <div class="case-tag tag-infra">Infrastructure</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Provisioned a complete Azure environment — resource group, VNet, subnet, network security group, public IP, Linux VM — entirely via Terraform IaC, debugging real free-tier SKU and capacity restrictions to keep the stack reproducible and destroyable on demand.</li>
+            <li>Automated VM configuration with Ansible (Docker install, service setup, user permissions), resolving an Ansible–Python/OS version conflict that required rebuilding on a newer Ubuntu image.</li>
+            <li>Built a 4-stage GitLab CI/CD pipeline (build → test → security → deploy) triggered on every push, running Trivy, Semgrep, Gitleaks, and OWASP Dependency Check as parallel security gates — open-source equivalents to commercial AppSec toolchains.</li>
+            <li>Automated zero-touch deployment over SSH (container teardown, code sync, rebuild, restart), resolving SSH key format (RSA vs ED25519) and CI/CD variable-scoping issues along the way.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Terraform</span><span class="stack-chip">Ansible</span><span class="stack-chip">Docker</span>
+            <span class="stack-chip">GitLab CI/CD</span><span class="stack-chip">Trivy</span><span class="stack-chip">Semgrep</span>
+            <span class="stack-chip">Gitleaks</span><span class="stack-chip">OWASP Dependency Check</span><span class="stack-chip">Azure</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/secureflow-devsecops" target="_blank">View repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 02 -->
+    <div class="case" data-case="02" data-tag="detect">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/02</div>
+        <div class="case-title-wrap">
+          <div class="case-title">An Optimized Real-Time VAPT Framework for Zero-Day Exploit Detection</div>
+          <div class="case-summary">M.Tech Major Project — anomaly-based intrusion detection tuned with genetic algorithms and fuzzy logic.</div>
+        </div>
+        <div class="case-tag tag-detect">Detection</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Set up a two-device Kali Linux environment (attacker and detection module) over a local network to simulate port scanning, brute-force, and denial-of-service attack scenarios, capturing synchronized network and system telemetry to build a labeled dataset.</li>
+            <li>Applied Isolation Forest for unsupervised anomaly detection, optimized with Genetic Algorithms for feature selection and Particle Swarm Optimization for hyperparameter tuning, then integrated a Fuzzy Inference System for human-interpretable risk classification of detected anomalies.</li>
+            <li>Validated detection models against the CIC-IDS and UNSW-NB15 benchmark datasets, producing evaluation reports with accuracy metrics, comparison plots, and CSV exports.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Kali Linux</span><span class="stack-chip">Isolation Forest</span><span class="stack-chip">Genetic Algorithms</span>
+            <span class="stack-chip">PSO</span><span class="stack-chip">Fuzzy Inference</span><span class="stack-chip">CIC-IDS</span><span class="stack-chip">UNSW-NB15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 03 -->
+    <div class="case" data-case="03" data-tag="detect">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/03</div>
+        <div class="case-title-wrap">
+          <div class="case-title">A Comprehensive Assessment on API Security using Machine Learning and Simulated VAPT Techniques</div>
+          <div class="case-summary">Intentionally vulnerable REST API used as a live testbed for ML-based attack detection.</div>
+        </div>
+        <div class="case-tag tag-detect">Detection</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Created an intentionally vulnerable REST API (Flask + SQLite) to simulate real-world security flaws for penetration testing and dataset generation.</li>
+            <li>Built automated request logging and feature extraction, feeding an ML detection pipeline using Isolation Forest with optional Random Forest classification and evaluation.</li>
+            <li>Produced end-to-end reporting and visualizations — CSV exports and PNG plots — to demonstrate detection performance.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Flask</span><span class="stack-chip">SQLite</span><span class="stack-chip">Isolation Forest</span><span class="stack-chip">Random Forest</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 04 -->
+    <div class="case" data-case="04" data-tag="cloud">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/04</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Cloud-Native Application Suite — Codec Technologies Internship</div>
+          <div class="case-summary">Six live cloud applications, including a mini-SIEM log monitor, built across a structured 3-month program.</div>
+        </div>
+        <div class="case-tag tag-cloud">Cloud</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Built and deployed six live cloud applications: real-time systems (Firebase chat app, live resource-monitoring dashboard), cloud storage (AWS S3 + MongoDB Atlas file manager), and serverless image processing (Cloudinary optimizer).</li>
+            <li>Developed a Cloud Log Monitoring &amp; Alert System (mini-SIEM) with real-time Firestore log ingestion, error-spike alerting (≥3 errors/60s), log-level filtering, and Chart.js analytics — functionally comparable to AWS CloudWatch and the ELK Stack.</li>
+            <li>Implemented cloud-native security and access control across all projects: Firebase Authentication (Google OAuth 2.0), role-based Firestore security rules, and admin-only control panels; practiced IAM policy design, cloud cost monitoring, and multi-platform deployment.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Firebase</span><span class="stack-chip">AWS S3</span><span class="stack-chip">MongoDB Atlas</span>
+            <span class="stack-chip">OAuth 2.0</span><span class="stack-chip">IAM</span><span class="stack-chip">Chart.js</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/syncchat" target="_blank">SyncChat ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/cloudsense" target="_blank">CloudSense ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/cloudvault" target="_blank">CloudVault ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/cloudmorph-image-processor" target="_blank">CloudMorph ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/cloud-log-monitoring-system" target="_blank">Log Monitor ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/Cloud-Based-Online-Examination-System" target="_blank">Online Exam System ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 05 -->
+    <div class="case" data-case="05" data-tag="cloud">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/05</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Wanderlust — Travel Booking Platform</div>
+          <div class="case-summary">Full-stack travel booking app with authenticated listings, search, and filtering.</div>
+        </div>
+        <div class="case-tag tag-cloud">Cloud</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Developed a full-stack travel booking web application with an interactive, responsive UI using HTML, CSS, and JavaScript.</li>
+            <li>Built backend services with Node.js and Express.js, integrating APIs and managing data operations with MongoDB.</li>
+            <li>Implemented secure user authentication and listing features, including search, filter, and sort functionality.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Node.js</span><span class="stack-chip">Express.js</span><span class="stack-chip">MongoDB</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/WanderLust-Holiday-rentals-and-more" target="_blank">View repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 06 -->
+    <div class="case" data-case="06" data-tag="crypto">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/06</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Secure Credit Card Tokenization &amp; Encryption Service</div>
+          <div class="case-summary">PCI-DSS-aligned PAN tokenization API — raw card numbers never persisted, only encrypted tokens and masked digits.</div>
+        </div>
+        <div class="case-tag tag-crypto">Crypto</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Built a Flask REST API that encrypts credit card numbers (PANs) using Fernet/AES-256 symmetric encryption, generating a random non-guessable UUID token for each card — mirroring how real payment gateways tokenize PANs.</li>
+            <li>Enforced PAN masking (only last 4 digits ever displayed) and ensured raw card data is never written to disk or logs, existing only in memory during the encrypt/tokenize step.</li>
+            <li>Gated decryption behind token-based access only, with secrets and environment files excluded from version control — security-aware design aligned with PCI-DSS handling principles.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Python</span><span class="stack-chip">Flask</span><span class="stack-chip">Fernet / AES-256</span><span class="stack-chip">PCI-DSS</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/credit-card-tokenization" target="_blank">View repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 07 -->
+    <div class="case" data-case="07" data-tag="crypto">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/07</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Secure User Authentication System (FastAPI)</div>
+          <div class="case-summary">End-to-end auth service demonstrating JWT, Argon2 hashing, RBAC, and expiring password-reset tokens.</div>
+        </div>
+        <div class="case-tag tag-crypto">Crypto</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Built a FastAPI backend handling signup, login, and protected routes, with passwords hashed using Argon2 (via Passlib) rather than legacy hashing schemes.</li>
+            <li>Implemented JWT-based authentication and validation, role-based access control (RBAC) for protected endpoints, and expiring tokens for password-reset flows.</li>
+            <li>Designed the system against OWASP authentication recommendations, with a lightweight HTML/CSS/JS frontend and SQLite backing store for a fully runnable demo.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">FastAPI</span><span class="stack-chip">JWT</span><span class="stack-chip">Argon2</span><span class="stack-chip">RBAC</span><span class="stack-chip">SQLite</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/authentication-system-fastapi" target="_blank">View repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 08 -->
+    <div class="case" data-case="08" data-tag="crypto">
+      <div class="case-head" onclick="toggleCase(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="case-id">CASE/08</div>
+        <div class="case-title-wrap">
+          <div class="case-title">Applied Cryptography &amp; Auth Security — mini-projects</div>
+          <div class="case-summary">A set of focused security builds: AES file/text encryption, Docker-based facial authentication, and a keylogger detection/demo study.</div>
+        </div>
+        <div class="case-tag tag-crypto">Crypto</div>
+        <div class="case-chevron">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-divider"></div>
+          <ul class="case-findings">
+            <li>Built standalone AES-based image and text encryption tools in Python/Flask to study symmetric cipher implementation, key management, and ciphertext handling outside of a larger framework.</li>
+            <li>Containerized a facial-authentication proof-of-concept with Docker to explore biometric auth deployment and isolation.</li>
+            <li>Built a keylogger demo to study endpoint attack techniques from the defender's side — understanding the mechanism in order to better detect and mitigate it.</li>
+          </ul>
+          <div class="case-stack">
+            <span class="stack-chip">Python</span><span class="stack-chip">AES</span><span class="stack-chip">Flask</span><span class="stack-chip">Docker</span>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/JATINJAYASIMHA/image-encryption-aes" target="_blank">Image Encryption ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/text-encryption-flask" target="_blank">Text Encryption ↗</a>
+            <a href="https://github.com/JATINJAYASIMHA/facial-authentication-docker" target="_blank">Facial Auth ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Record</div>
+        <h2 class="section-title">Experience</h2>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-period">Aug 2022 —<br>Aug 2023</div>
+      <div>
+        <div class="exp-role">Software Engineer Trainee, Application Security</div>
+        <div class="exp-org">Cognizant Technology Solutions · Bengaluru</div>
+        <ul class="exp-points">
+          <li>Developed an enterprise security remediation platform integrating Azure OpenAI for intelligent code analysis, reducing manual review time by ~40% and accelerating secure development workflows.</li>
+          <li>Mapped detected vulnerabilities to 200+ CWE classifications and automated OWASP-aligned remediation outputs, increasing consistency and accuracy of vulnerability reporting by ~30%; outputs directly supported audit evidence pipelines.</li>
+          <li>Designed prompt workflows and built REST APIs for AI-assisted vulnerability detection and secure code generation, enabling automated fixes for ~60–70% of common security findings and reducing mean time to remediate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-period">Mar 2022 —<br>Jul 2022</div>
+      <div>
+        <div class="exp-role">Application Development and Management Intern</div>
+        <div class="exp-org">Cognizant Technology Solutions · Bengaluru</div>
+        <ul class="exp-points">
+          <li>Developed a UI wrapper for Jenkins using React.js, Express.js, Node.js, and MongoDB to streamline test execution workflows, with real-time interaction for running full robot test suites or individual scripts.</li>
+          <li>Implemented APIs to trigger Jenkins jobs and to fetch, update, and sync data with GitHub.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Toolkit</div>
+        <h2 class="section-title">Skills &amp; technologies</h2>
+      </div>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-cell">
+        <div class="skill-cat">Security tools &amp; platforms</div>
+        <div class="skill-list">
+          <span class="skill-chip">Kali Linux</span><span class="skill-chip">Burp Suite</span><span class="skill-chip">Nmap</span>
+          <span class="skill-chip">Wireshark</span><span class="skill-chip">Metasploit</span><span class="skill-chip">Splunk</span>
+          <span class="skill-chip">Tenable Nessus</span><span class="skill-chip">OSINT</span><span class="skill-chip">VMware</span><span class="skill-chip">VirtualBox</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Networking &amp; detection</div>
+        <div class="skill-list">
+          <span class="skill-chip">TCP/IP</span><span class="skill-chip">DNS</span><span class="skill-chip">HTTP/S</span><span class="skill-chip">Snort</span>
+          <span class="skill-chip">Suricata</span><span class="skill-chip">OSSEC</span><span class="skill-chip">SIEM</span><span class="skill-chip">IDS/IPS</span>
+          <span class="skill-chip">Firewalls</span><span class="skill-chip">ELK Stack</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Cloud &amp; DevSecOps</div>
+        <div class="skill-list">
+          <span class="skill-chip">AWS (IAM, S3)</span><span class="skill-chip">Microsoft Azure</span><span class="skill-chip">Terraform</span>
+          <span class="skill-chip">Ansible</span><span class="skill-chip">GitLab CI/CD</span><span class="skill-chip">Docker</span>
+          <span class="skill-chip">Trivy</span><span class="skill-chip">Semgrep</span><span class="skill-chip">Gitleaks</span><span class="skill-chip">OWASP Dependency Check</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Identity &amp; access</div>
+        <div class="skill-list">
+          <span class="skill-chip">OAuth 2.0</span><span class="skill-chip">Firebase Authentication</span><span class="skill-chip">RBAC</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Programming</div>
+        <div class="skill-list">
+          <span class="skill-chip">Java</span><span class="skill-chip">Python</span><span class="skill-chip">C</span>
+          <span class="skill-chip">MySQL</span><span class="skill-chip">Git / GitHub</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Machine Learning</div>
+        <div class="skill-list">
+          <span class="skill-chip">Isolation Forest</span><span class="skill-chip">Random Forest</span><span class="skill-chip">FIS</span>
+          <span class="skill-chip">Autoencoder</span><span class="skill-chip">Genetic Algorithms</span>
+          <span class="skill-chip">Particle Swarm Optimization</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Frameworks &amp; standards</div>
+        <div class="skill-list">
+          <span class="skill-chip">MITRE ATT&amp;CK</span><span class="skill-chip">OWASP Top 10</span><span class="skill-chip">CVSS</span>
+          <span class="skill-chip">NIST</span><span class="skill-chip">PCI-DSS</span><span class="skill-chip">ISO/IEC 27001</span>
+          <span class="skill-chip">GDPR</span><span class="skill-chip">HIPAA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Verified</div>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-row">
+        <div class="cert-name">Ethical Hacker</div>
+        <div class="cert-org">Cisco Networking Academy — 2025</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Digital Forensics Masterclass (Complete Computer Forensics)</div>
+        <div class="cert-org">EC-Council — 2025</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Java Programming</div>
+        <div class="cert-org">Frontlines Media</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Python Programming</div>
+        <div class="cert-org">Python Bootcamp, Udemy</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Cybersecurity Internship — networking, OS security, malware analysis &amp; applied crypto tasks</div>
+        <div class="cert-org">Elevate Labs</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Cybersecurity Internship</div>
+        <div class="cert-org">SlashMark IT Solutions</div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Cloud-Computing Internship</div>
+        <div class="cert-org">Codec Technologies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-line">Looking for someone who can <span class="amber">investigate, document, and stand behind the findings</span>?</div>
+        <div class="hero-cta" style="margin-top:32px;">
+          <a href="mailto:jathinsimha08@gmail.com" class="btn btn-primary">Email me →</a>
+          <a href="https://github.com/JATINJAYASIMHA" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://linkedin.com/in/jathinjayasimha-v-n" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:jathinsimha08@gmail.com" class="copyable" data-copy="jathinsimha08@gmail.com">jathinsimha08@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="copyable" data-copy="+91 81234 70135">+91 81234 70135</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span>Bengaluru, Karnataka, India</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/JATINJAYASIMHA" target="_blank">github.com/JATINJAYASIMHA</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/jathinjayasimha-v-n" target="_blank">in/jathinjayasimha-v-n</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>JatinJayasimha VN — M.Tech Cybersecurity, BMS Institute of Technology and Management</div>
+      <div>Built and maintained as a living case file · <span id="rev-marker">rev. 2026.06</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleCase(headEl){
+    const card = headEl.closest('.case');
+    const body = card.querySelector('.case-body');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.case.open').forEach(c=>{
+      if(c!==card){
+        c.classList.remove('open');
+        c.querySelector('.case-body').style.maxHeight=null;
+        c.querySelector('.case-head').setAttribute('aria-expanded','false');
+      }
+    });
+    if(isOpen){
+      card.classList.remove('open');
+      body.style.maxHeight = null;
+      headEl.setAttribute('aria-expanded','false');
+    } else {
+      card.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      headEl.setAttribute('aria-expanded','true');
+    }
+  }
+  document.querySelectorAll('.case-head').forEach(headEl => {
+    headEl.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleCase(headEl);
+      }
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.case.open').forEach(card => {
+      const body = card.querySelector('.case-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      card.querySelector('.case-head').setAttribute('aria-expanded','true');
+    });
+  });
+
+  function toggleTheme(){
+    const html = document.documentElement;
+    const isLight = html.getAttribute('data-theme') === 'light';
+    if(isLight){
+      html.removeAttribute('data-theme');
+      try{ localStorage.setItem('jjvn-theme','dark'); }catch(e){}
+    } else {
+      html.setAttribute('data-theme','light');
+      try{ localStorage.setItem('jjvn-theme','light'); }catch(e){}
+    }
+    // Recalculate any open case-file max-height since font/box metrics can shift slightly between themes
+    document.querySelectorAll('.case.open .case-body').forEach(body => {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  }
+
+  document.querySelectorAll('.copyable').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const text = el.getAttribute('data-copy');
+      if(!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 1600);
+      }).catch(() => {});
+    });
+  });
+
+  function filterCases(chipEl){
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chipEl.classList.add('active');
+    const filter = chipEl.getAttribute('data-filter');
+    document.querySelectorAll('.case').forEach(card => {
+      const matches = (filter === 'all') || (card.getAttribute('data-tag') === filter);
+      if(matches){
+        card.classList.remove('filtered-out');
+      } else {
+        // Close it first if it happened to be open, so it doesn't pop back open later mismatched
+        if(card.classList.contains('open')){
+          card.classList.remove('open');
+          const body = card.querySelector('.case-body');
+          if(body) body.style.maxHeight = null;
+          const head = card.querySelector('.case-head');
+          if(head) head.setAttribute('aria-expanded','false');
+        }
+        card.classList.add('filtered-out');
+      }
+    });
+  }
+
+  // Restrained reveal-on-scroll: fade + rise, once per element, staggered slightly within each group
+  (function initReveal(){
+    const targets = document.querySelectorAll('.case, .exp-row, .skill-cell, .cert-row');
+    targets.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (Math.min(i % 6, 5) * 0.05) + 's';
+    });
+    if('IntersectionObserver' in window){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      targets.forEach(el => observer.observe(el));
+    } else {
+      targets.forEach(el => el.classList.add('in-view'));
+    }
+  })();
+
+  // Deep-linkable case files: assign a stable id to each, make the CASE/NN label a copyable
+  // permalink, and auto-open + scroll to the matching case if the page loads with #case-NN.
+  (function initCaseDeepLinks(){
+    document.querySelectorAll('.case[data-case]').forEach(card => {
+      const num = card.getAttribute('data-case');
+      card.id = 'case-' + num;
+      const idEl = card.querySelector('.case-id');
+      if(idEl){
+        idEl.classList.add('case-id-link');
+        idEl.title = 'Copy link to this case';
+        idEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const url = window.location.origin + window.location.pathname + '#case-' + num;
+          navigator.clipboard.writeText(url).then(() => {
+            idEl.classList.add('copied-id');
+            setTimeout(() => idEl.classList.remove('copied-id'), 1400);
+          }).catch(() => {});
+        });
+      }
+    });
+
+    function openFromHash(){
+      const hash = window.location.hash;
+      const match = hash.match(/^#case-(\d{2})$/);
+      if(!match) return;
+      const card = document.getElementById('case-' + match[1]);
+      if(!card) return;
+      // Make sure the filter row isn't hiding it
+      const allChip = document.querySelector('.filter-chip[data-filter="all"]');
+      if(allChip) filterCases(allChip);
+      const head = card.querySelector('.case-head');
+      if(head && !card.classList.contains('open')) toggleCase(head);
+      setTimeout(() => card.scrollIntoView({ behavior:'smooth', block:'center' }), 80);
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  })();
+</script>
+</body>
+</html>
